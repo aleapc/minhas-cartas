@@ -1,0 +1,10 @@
+# PDFs originais (muito grandes para GitHub)
+*.pdf
+
+# Arquivos de texto extraídos
+livro1.txt
+livro2.txt
+
+# Sistema
+.DS_Store
+Thumbs.db
