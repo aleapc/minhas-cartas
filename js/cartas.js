@@ -65,7 +65,13 @@
             modalClose: document.getElementById('modal-close'),
             modalPrev: document.getElementById('modal-prev'),
             modalNext: document.getElementById('modal-next'),
-            assuntosLista: document.getElementById('assuntos-lista')
+            assuntosLista: document.getElementById('assuntos-lista'),
+            // Estatísticas
+            statTotal: document.getElementById('stat-total'),
+            statAnos: document.getElementById('stat-anos'),
+            statVol1: document.getElementById('stat-vol1'),
+            statVol2: document.getElementById('stat-vol2'),
+            timelineBtns: document.querySelectorAll('.timeline-btn')
         };
     }
 
@@ -131,6 +137,30 @@
             if (e.key === 'ArrowLeft') cartaAnterior();
             if (e.key === 'ArrowRight') proximaCarta();
         });
+
+        // Timeline navigation
+        els.timelineBtns?.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all
+                els.timelineBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const decada = btn.dataset.decada;
+                if (decada === 'todas') {
+                    state.filtros.anoInicio = null;
+                    state.filtros.anoFim = null;
+                    if (els.selectAnoInicio) els.selectAnoInicio.value = '';
+                    if (els.selectAnoFim) els.selectAnoFim.value = '';
+                } else {
+                    const [anoInicio, anoFim] = decada.split('-').map(Number);
+                    state.filtros.anoInicio = anoInicio;
+                    state.filtros.anoFim = anoFim;
+                    if (els.selectAnoInicio) els.selectAnoInicio.value = anoInicio;
+                    if (els.selectAnoFim) els.selectAnoFim.value = anoFim;
+                }
+                aplicarFiltros();
+            });
+        });
     }
 
     async function carregarCartas() {
@@ -150,6 +180,9 @@
             // Popular filtros de ano e assuntos
             popularFiltroAno();
             popularFiltroAssuntos();
+
+            // Atualizar estatísticas
+            atualizarEstatisticas();
 
             // Aplicar filtros iniciais
             aplicarFiltros();
@@ -210,6 +243,22 @@
         if (state.filtros.anoFim && els.selectAnoFim) {
             els.selectAnoFim.value = state.filtros.anoFim;
         }
+    }
+
+    function atualizarEstatisticas() {
+        const total = state.cartas.length;
+        const vol1 = state.cartas.filter(c => c.volume === 1).length;
+        const vol2 = state.cartas.filter(c => c.volume === 2).length;
+
+        const anos = [...new Set(state.cartas.map(c => c.ano).filter(a => a))];
+        const anoMin = anos.length ? Math.min(...anos) : 1958;
+        const anoMax = anos.length ? Math.max(...anos) : 2025;
+        const spanAnos = anoMax - anoMin + 1;
+
+        if (els.statTotal) els.statTotal.textContent = total.toLocaleString('pt-BR');
+        if (els.statAnos) els.statAnos.textContent = spanAnos;
+        if (els.statVol1) els.statVol1.textContent = vol1.toLocaleString('pt-BR');
+        if (els.statVol2) els.statVol2.textContent = vol2.toLocaleString('pt-BR');
     }
 
     function popularFiltroAssuntos() {

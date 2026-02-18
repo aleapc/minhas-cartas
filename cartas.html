@@ -32,6 +32,45 @@
     </header>
 
     <main class="cartas-page">
+        <!-- Header da Galeria -->
+        <section class="galeria-header">
+            <div class="container">
+                <h1>Galeria de Cartas</h1>
+                <p class="galeria-subtitulo">Navegue por mais de 60 anos de correspondências publicadas</p>
+
+                <!-- Estatísticas -->
+                <div id="estatisticas" class="estatisticas">
+                    <div class="stat-item">
+                        <span class="stat-numero" id="stat-total">-</span>
+                        <span class="stat-label">Cartas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero" id="stat-anos">-</span>
+                        <span class="stat-label">Anos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero" id="stat-vol1">-</span>
+                        <span class="stat-label">Volume 1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero" id="stat-vol2">-</span>
+                        <span class="stat-label">Volume 2</span>
+                    </div>
+                </div>
+
+                <!-- Timeline de Décadas -->
+                <div class="timeline-nav">
+                    <button class="timeline-btn active" data-decada="todas">Todas</button>
+                    <button class="timeline-btn" data-decada="1958-1969">1958-69</button>
+                    <button class="timeline-btn" data-decada="1980-1989">Anos 80</button>
+                    <button class="timeline-btn" data-decada="1990-1999">Anos 90</button>
+                    <button class="timeline-btn" data-decada="2000-2009">2000s</button>
+                    <button class="timeline-btn" data-decada="2010-2019">2010s</button>
+                    <button class="timeline-btn" data-decada="2020-2025">2020s</button>
+                </div>
+            </div>
+        </section>
+
         <button id="filtros-toggle" class="filtros-toggle">Filtros</button>
 
         <div class="cartas-container">
