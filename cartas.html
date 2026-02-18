@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Cartas - Silvano Corrêa</title>
+    <meta name="description" content="Navegue pelas centenas de cartas publicadas por Silvano Corrêa entre 1958 e 2025. Filtre por volume, ano e assunto.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cartas.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Silvano Corrêa</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre o Autor</a></li>
+                <li><a href="volume1.html">Volume 1</a></li>
+                <li><a href="volume2.html">Volume 2</a></li>
+                <li><a href="cartas.html" class="active">Cartas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="cartas-page">
+        <button id="filtros-toggle" class="filtros-toggle">Filtros</button>
+
+        <div class="cartas-container">
+            <!-- Sidebar de Filtros -->
+            <aside id="filtros-sidebar" class="filtros-sidebar">
+                <div class="filtros-header">
+                    <h2>Filtros</h2>
+                    <button id="btn-limpar" class="btn-limpar">Limpar</button>
+                </div>
+
+                <!-- Filtro de Volume -->
+                <div class="filtro-grupo">
+                    <h3>Volume</h3>
+                    <div class="filtro-opcoes">
+                        <div class="filtro-opcao">
+                            <input type="radio" name="volume" id="vol-todos" value="todos" checked>
+                            <label for="vol-todos">Todos</label>
+                        </div>
+                        <div class="filtro-opcao">
+                            <input type="radio" name="volume" id="vol-1" value="1">
+                            <label for="vol-1">Volume 1 (1958-2008)</label>
+                        </div>
+                        <div class="filtro-opcao">
+                            <input type="radio" name="volume" id="vol-2" value="2">
+                            <label for="vol-2">Volume 2 (2009-2025)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtro de Ano -->
+                <div class="filtro-grupo">
+                    <h3>Ano</h3>
+                    <div class="ano-selects">
+                        <select id="ano-inicio">
+                            <option value="">De</option>
+                        </select>
+                        <span>a</span>
+                        <select id="ano-fim">
+                            <option value="">Até</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Filtro de Assuntos -->
+                <div class="filtro-grupo">
+                    <h3>Assuntos</h3>
+                    <div id="assuntos-lista" class="assuntos-lista filtro-opcoes">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área Principal -->
+            <section class="cartas-main">
+                <!-- Barra de Busca -->
+                <div class="busca-container">
+                    <div class="busca-input">
+                        <input type="text" id="busca-texto" placeholder="Buscar no texto das cartas...">
+                        <button id="btn-buscar" class="btn-buscar">Buscar</button>
+                    </div>
+                </div>
+
+                <!-- Info de Resultados -->
+                <div class="resultados-info">
+                    <p id="resultados-count" class="resultados-count">Carregando...</p>
+                    <select id="ordenar" class="ordenar-select">
+                        <option value="pagina">Ordenar por página</option>
+                        <option value="ano-asc">Ano (antigo primeiro)</option>
+                        <option value="ano-desc">Ano (recente primeiro)</option>
+                        <option value="volume">Volume</option>
+                    </select>
+                </div>
+
+                <!-- Loading -->
+                <div id="loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Carregando cartas...</p>
+                </div>
+
+                <!-- Estado Vazio -->
+                <div id="estado-vazio" class="estado-vazio" style="display: none;">
+                    <h3>Nenhuma carta encontrada</h3>
+                    <p>Tente ajustar os filtros ou a busca.</p>
+                </div>
+
+                <!-- Grid de Cartas -->
+                <div id="cartas-grid" class="cartas-grid" style="display: none;"></div>
+
+                <!-- Carregar Mais -->
+                <div class="carregar-mais">
+                    <button id="btn-carregar" class="btn-carregar" style="display: none;">Carregar mais cartas</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de Visualização -->
+    <div id="modal" class="modal-overlay">
+        <button id="modal-prev" class="modal-nav prev">&larr;</button>
+        <button id="modal-next" class="modal-nav next">&rarr;</button>
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-volume">Volume 1</h3>
+                <button id="modal-close" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-imagem">
+                    <img id="modal-img" src="" alt="Carta">
+                </div>
+                <div class="modal-detalhes">
+                    <div class="modal-meta">
+                        <div class="modal-meta-item">
+                            <strong>Página:</strong>
+                            <span id="modal-pagina">-</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <strong>Ano:</strong>
+                            <span id="modal-ano">-</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <strong>Data:</strong>
+                            <span id="modal-data">-</span>
+                        </div>
+                    </div>
+
+                    <div id="modal-assuntos" class="modal-assuntos"></div>
+
+                    <div class="modal-texto">
+                        <h4>Texto (OCR)</h4>
+                        <div id="modal-texto" class="modal-texto-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Minhas Cartas</h4>
+                    <p>expressões de um idealista</p>
+                    <p class="copyright">&copy; 2025 Silvano Corrêa. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>scorrea@uol.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cartas.js"></script>
+</body>
+</html>
