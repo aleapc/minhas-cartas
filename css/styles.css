@@ -1077,6 +1077,63 @@ p {
     margin-top: var(--spacing-md);
 }
 
+/* Carta JFK - Toggle de Idiomas */
+.carta-jfk-texto {
+    margin: var(--spacing-md) 0;
+}
+
+.carta-toggle {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.toggle-btn {
+    padding: 6px 16px;
+    background: transparent;
+    border: 2px solid var(--vol2-primary);
+    color: var(--vol2-primary);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.toggle-btn:hover {
+    background: var(--vol2-light);
+}
+
+.toggle-btn.active {
+    background: var(--vol2-primary);
+    color: var(--white);
+}
+
+.carta-conteudo {
+    background: var(--white);
+    border-left: 4px solid var(--vol1-primary);
+    padding: var(--spacing-md);
+    margin: 0;
+    border-radius: 0 8px 8px 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.carta-conteudo p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.carta-conteudo p:last-child {
+    margin-bottom: 0;
+}
+
+.carta-conteudo strong {
+    color: var(--vol2-primary);
+    font-style: normal;
+}
+
 @media (max-width: 768px) {
     .destaque-content {
         grid-template-columns: 1fr;

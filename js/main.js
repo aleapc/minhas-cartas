@@ -104,4 +104,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    // JFK Letter Language Toggle
+    const toggleBtns = document.querySelectorAll('.carta-toggle .toggle-btn');
+    const jfkEn = document.getElementById('jfk-en');
+    const jfkPt = document.getElementById('jfk-pt');
+
+    if (toggleBtns.length && jfkEn && jfkPt) {
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+
+                // Update buttons
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show/hide content
+                if (lang === 'en') {
+                    jfkEn.style.display = 'block';
+                    jfkPt.style.display = 'none';
+                } else {
+                    jfkEn.style.display = 'none';
+                    jfkPt.style.display = 'block';
+                }
+            });
+        });
+    }
 });
