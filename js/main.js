@@ -165,23 +165,29 @@ document.addEventListener('DOMContentLoaded', function() {
         langOptions.forEach(option => {
             option.addEventListener('click', function() {
                 const lang = this.dataset.lang;
-
-                // Update button
-                langFlag.textContent = languages[lang].flag;
-                langCode.textContent = languages[lang].code;
-
-                // Update active state
-                langOptions.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
+                const url = this.dataset.url;
 
                 // Save preference
                 localStorage.setItem('site-language', lang);
 
-                // Close dropdown
-                langSelector.classList.remove('open');
+                // Redirect to the corresponding page if URL is provided
+                if (url) {
+                    window.location.href = url;
+                } else {
+                    // Update button
+                    langFlag.textContent = languages[lang].flag;
+                    langCode.textContent = languages[lang].code;
 
-                // Show notification
-                showLanguageNotification(languages[lang].name);
+                    // Update active state
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Close dropdown
+                    langSelector.classList.remove('open');
+
+                    // Show notification
+                    showLanguageNotification(languages[lang].name);
+                }
             });
         });
 

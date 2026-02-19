@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters Gallery - Silvano Correa</title>
+    <meta name="description" content="Browse through hundreds of letters published by Silvano Correa between 1958 and 2025.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Silvano Correa</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About the Author</a></li>
+                <li><a href="volume1.html">Volume 1</a></li>
+                <li><a href="volume2.html">Volume 2</a></li>
+                <li><a href="letters.html" class="active">Letters</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="language-selector" id="language-selector">
+                <button class="language-selector-btn" aria-label="Select language">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span class="lang-code">EN</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="language-option" data-lang="pt" data-url="../cartas.html">
+                        <span class="lang-flag">🇧🇷</span>
+                        <span class="lang-name">Português</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                    <button class="language-option active" data-lang="en" data-url="letters.html">
+                        <span class="lang-flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                    <button class="language-option" data-lang="es" data-url="../es/cartas.html">
+                        <span class="lang-flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Letters Gallery</h1>
+                <p>Browse over 60 years of published correspondence</p>
+            </div>
+        </section>
+
+        <section style="padding: 4rem 0;">
+            <div class="container" style="text-align: center;">
+                <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    The letters gallery with search and filter functionality is available in Portuguese.
+                </p>
+                <a href="../cartas.html" class="btn btn-primary">View Letters Gallery</a>
+            </div>
+        </section>
+
+        <section class="volumes" style="padding: 4rem 0;">
+            <div class="container">
+                <h2 style="text-align: center;">Explore the Volumes</h2>
+                <div class="volumes-grid">
+                    <article class="volume-card volume1">
+                        <div class="volume-cover">
+                            <img src="../assets/images/capa-vol1.png" alt="Volume 1 Cover">
+                        </div>
+                        <div class="volume-info">
+                            <h3>Volume 1</h3>
+                            <p class="volume-period">1958 — 2008</p>
+                            <p class="volume-desc">Fifty years of letters published in newspapers and magazines worldwide.</p>
+                            <a href="volume1.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </article>
+
+                    <article class="volume-card volume2">
+                        <div class="volume-cover">
+                            <img src="../assets/images/capa-vol2.png" alt="Volume 2 Cover">
+                        </div>
+                        <div class="volume-info">
+                            <h3>Volume 2</h3>
+                            <p class="volume-period">2009 — 2025</p>
+                            <p class="volume-desc">Over 350 selected letters continuing the journey of civic participation.</p>
+                            <a href="volume2.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>My Letters</h4>
+                    <p>expressions of an idealist</p>
+                    <p class="copyright">&copy; 2025 Silvano Correa. All rights reserved.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>scorrea@uol.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Cartas - Silvano Correa</title>
+    <meta name="description" content="Navegue por los cientos de cartas publicadas por Silvano Correa entre 1958 y 2025.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Silvano Correa</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre el Autor</a></li>
+                <li><a href="volumen1.html">Volumen 1</a></li>
+                <li><a href="volumen2.html">Volumen 2</a></li>
+                <li><a href="cartas.html" class="active">Cartas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="language-selector" id="language-selector">
+                <button class="language-selector-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-flag">🇪🇸</span>
+                    <span class="lang-code">ES</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="language-option" data-lang="pt" data-url="../cartas.html">
+                        <span class="lang-flag">🇧🇷</span>
+                        <span class="lang-name">Português</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                    <button class="language-option" data-lang="en" data-url="../en/letters.html">
+                        <span class="lang-flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                    <button class="language-option active" data-lang="es" data-url="cartas.html">
+                        <span class="lang-flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                        <span class="lang-check">✓</span>
+                    </button>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Galería de Cartas</h1>
+                <p>Navegue por más de 60 años de correspondencias publicadas</p>
+            </div>
+        </section>
+
+        <section style="padding: 4rem 0;">
+            <div class="container" style="text-align: center;">
+                <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    La galería de cartas con funcionalidad de búsqueda y filtros está disponible en portugués.
+                </p>
+                <a href="../cartas.html" class="btn btn-primary">Ver Galería de Cartas</a>
+            </div>
+        </section>
+
+        <section class="volumes" style="padding: 4rem 0;">
+            <div class="container">
+                <h2 style="text-align: center;">Explorar los Volúmenes</h2>
+                <div class="volumes-grid">
+                    <article class="volume-card volume1">
+                        <div class="volume-cover">
+                            <img src="../assets/images/capa-vol1.png" alt="Portada Volumen 1">
+                        </div>
+                        <div class="volume-info">
+                            <h3>Volumen 1</h3>
+                            <p class="volume-period">1958 — 2008</p>
+                            <p class="volume-desc">Cincuenta años de cartas publicadas en periódicos y revistas de todo el mundo.</p>
+                            <a href="volumen1.html" class="btn btn-primary">Ver Detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="volume-card volume2">
+                        <div class="volume-cover">
+                            <img src="../assets/images/capa-vol2.png" alt="Portada Volumen 2">
+                        </div>
+                        <div class="volume-info">
+                            <h3>Volumen 2</h3>
+                            <p class="volume-period">2009 — 2025</p>
+                            <p class="volume-desc">Más de 350 cartas seleccionadas continuando el viaje de participación ciudadana.</p>
+                            <a href="volumen2.html" class="btn btn-secondary">Ver Detalles</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Mis Cartas</h4>
+                    <p>expresiones de un idealista</p>
+                    <p class="copyright">&copy; 2025 Silvano Correa. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>scorrea@uol.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
