@@ -208,7 +208,25 @@ p {
 }
 
 .language-selector-btn .lang-flag {
-    font-size: 1rem;
+    width: 20px;
+    height: 15px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
+}
+
+.lang-flag.flag-br {
+    background-image: url('https://flagcdn.com/w40/br.png');
+}
+
+.lang-flag.flag-us {
+    background-image: url('https://flagcdn.com/w40/us.png');
+}
+
+.lang-flag.flag-es {
+    background-image: url('https://flagcdn.com/w40/es.png');
 }
 
 .language-selector-btn .lang-arrow {
@@ -270,7 +288,13 @@ p {
 }
 
 .language-option .lang-flag {
-    font-size: 1.25rem;
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
 }
 
 .language-option .lang-name {
