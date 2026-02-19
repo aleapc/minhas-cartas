@@ -1,5 +1,5 @@
 /* ==========================================
-   Minhas Cartas - Silvano Corrêa
+   Minhas Cartas - Silvano Correa
    Estilos principais
    ========================================== */
 
@@ -178,6 +178,112 @@ p {
     height: 2px;
     background: var(--text-primary);
     transition: var(--transition);
+}
+
+/* Language Selector */
+.language-selector {
+    position: relative;
+    margin-left: var(--spacing-md);
+}
+
+.language-selector-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.language-selector-btn:hover {
+    border-color: var(--vol2-primary);
+    color: var(--vol2-primary);
+}
+
+.language-selector-btn .lang-flag {
+    font-size: 1rem;
+}
+
+.language-selector-btn .lang-arrow {
+    font-size: 0.625rem;
+    transition: transform var(--transition);
+}
+
+.language-selector.open .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 160px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.language-selector.open .language-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: left;
+}
+
+.language-option:hover {
+    background: var(--vol2-light);
+    color: var(--vol2-primary);
+}
+
+.language-option.active {
+    background: var(--vol2-light);
+    color: var(--vol2-primary);
+    font-weight: 600;
+}
+
+.language-option .lang-flag {
+    font-size: 1.25rem;
+}
+
+.language-option .lang-name {
+    flex: 1;
+}
+
+.language-option .lang-check {
+    opacity: 0;
+    color: var(--vol2-primary);
+}
+
+.language-option.active .lang-check {
+    opacity: 1;
 }
 
 /* ==========================================
@@ -941,6 +1047,21 @@ p {
 
     .nav-toggle {
         display: flex;
+    }
+
+    .language-selector {
+        position: absolute;
+        right: 60px;
+        margin-left: 0;
+    }
+
+    .language-selector-btn {
+        padding: 5px 10px;
+        font-size: 0.8125rem;
+    }
+
+    .language-dropdown {
+        right: -20px;
     }
 
     .hero h1 {

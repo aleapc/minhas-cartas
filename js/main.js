@@ -1,5 +1,5 @@
 // ==========================================
-// Minhas Cartas - Silvano Corrêa
+// Minhas Cartas - Silvano Correa
 // JavaScript Principal
 // ==========================================
 
@@ -129,5 +129,126 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    }
+
+    // Language Selector
+    const langSelector = document.getElementById('language-selector');
+    if (langSelector) {
+        const langBtn = langSelector.querySelector('.language-selector-btn');
+        const langOptions = langSelector.querySelectorAll('.language-option');
+        const langFlag = langBtn.querySelector('.lang-flag');
+        const langCode = langBtn.querySelector('.lang-code');
+
+        const languages = {
+            pt: { flag: '🇧🇷', code: 'PT', name: 'Português' },
+            en: { flag: '🇺🇸', code: 'EN', name: 'English' },
+            es: { flag: '🇪🇸', code: 'ES', name: 'Español' }
+        };
+
+        // Load saved language
+        const savedLang = localStorage.getItem('site-language') || 'pt';
+        if (savedLang !== 'pt') {
+            langFlag.textContent = languages[savedLang].flag;
+            langCode.textContent = languages[savedLang].code;
+            langOptions.forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.lang === savedLang);
+            });
+        }
+
+        // Toggle dropdown
+        langBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            langSelector.classList.toggle('open');
+        });
+
+        // Select language
+        langOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+
+                // Update button
+                langFlag.textContent = languages[lang].flag;
+                langCode.textContent = languages[lang].code;
+
+                // Update active state
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+
+                // Save preference
+                localStorage.setItem('site-language', lang);
+
+                // Close dropdown
+                langSelector.classList.remove('open');
+
+                // Show notification
+                showLanguageNotification(languages[lang].name);
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langSelector.contains(e.target)) {
+                langSelector.classList.remove('open');
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                langSelector.classList.remove('open');
+            }
+        });
+    }
+
+    // Language notification
+    function showLanguageNotification(langName) {
+        // Remove existing notification
+        const existing = document.querySelector('.lang-notification');
+        if (existing) existing.remove();
+
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = 'lang-notification';
+        notification.innerHTML = `
+            <span>Idioma selecionado: <strong>${langName}</strong></span>
+            <small>Tradução em breve disponível</small>
+        `;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--vol2-primary, #1E3A5F);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        `;
+
+        // Add animation styles
+        const animStyle = document.createElement('style');
+        animStyle.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(animStyle);
+
+        document.body.appendChild(notification);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease forwards';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
     }
 });
