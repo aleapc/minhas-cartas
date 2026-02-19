@@ -53,11 +53,13 @@ Este relatório documenta a implementação completa do sistema de extração, i
 
 **Resultados da Extração:**
 
-| Volume | Páginas | Imagens Encontradas | Imagens Válidas |
-|--------|---------|---------------------|-----------------|
-| Volume 1 | 220 | 456 | 433 |
-| Volume 2 | 364 | 1.037 | 975 |
-| **Total** | **584** | **1.493** | **1.408** |
+| Volume | Páginas | Extraídas | Após Limpeza |
+|--------|---------|-----------|--------------|
+| Volume 1 | 220 | 433 | 204 |
+| Volume 2 | 364 | 975 | 572 |
+| **Total** | **584** | **1.408** | **776** |
+
+*Nota: 632 imagens genéricas (ícones <50KB) foram removidas na limpeza.*
 
 ### 3.2 Estrutura de Arquivos Gerados
 
@@ -108,10 +110,10 @@ O sistema identifica 12 categorias baseadas em palavras-chave:
 
 ### 4.3 Estatísticas do OCR
 
-- **Cartas processadas:** 1.408
-- **Cartas com ano identificado:** 587 (41,7%)
+- **Cartas processadas:** 776 (após limpeza de imagens genéricas)
+- **Cartas com ano identificado:** 557 (71,8%)
 - **Cartas com data completa:** variável
-- **Tempo de processamento:** ~15-20 minutos
+- **Imagens genéricas removidas:** 632 (ícones <50KB)
 
 ---
 
