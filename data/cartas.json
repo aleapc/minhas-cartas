@@ -2902,30 +2902,6 @@
       ]
     },
     {
-      "id": "vol1_p220_img6",
-      "volume": 1,
-      "pagina": 220,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol1/vol1_p220_img6.jpg",
-      "texto": "",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
-      "id": "vol1_p220_img8",
-      "volume": 1,
-      "pagina": 220,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol1/vol1_p220_img8.jpg",
-      "texto": "ISBN: 978-65-01-56953-6\n9\"786501'569556",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
       "id": "vol2_p001_img1",
       "volume": 2,
       "pagina": 1,
@@ -11164,30 +11140,6 @@
       ]
     },
     {
-      "id": "vol2_p363_img1",
-      "volume": 2,
-      "pagina": 363,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol2/vol2_p363_img1.jpg",
-      "texto": "",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
-      "id": "vol2_p363_img2",
-      "volume": 2,
-      "pagina": 363,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol2/vol2_p363_img2.jpg",
-      "texto": "JUL",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
       "id": "vol2_p364_img11",
       "volume": 2,
       "pagina": 364,
@@ -11200,18 +11152,6 @@
       ]
     },
     {
-      "id": "vol2_p364_img12",
-      "volume": 2,
-      "pagina": 364,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol2/vol2_p364_img12.jpg",
-      "texto": "",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
       "id": "vol2_p364_img2",
       "volume": 2,
       "pagina": 364,
@@ -11219,18 +11159,6 @@
       "data_publicacao": null,
       "imagem": "assets/cartas/vol2/vol2_p364_img2.jpg",
       "texto": "Ro)\n) nr\nvê mem =\nh Y\nz\ne A)\nlt mm\ne o o\nTr\n“4 F, 4\nA /, au 74\nFi, Á y 8",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
-      "id": "vol2_p364_img6",
-      "volume": 2,
-      "pagina": 364,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol2/vol2_p364_img6.jpg",
-      "texto": "ISBN: 978-65-01-56952-9\n9 1786501'569529",
       "assuntos": [
         "Geral"
       ]
@@ -11255,18 +11183,6 @@
       "data_publicacao": null,
       "imagem": "assets/cartas/vol2/vol2_p364_img8.jpg",
       "texto": "4",
-      "assuntos": [
-        "Geral"
-      ]
-    },
-    {
-      "id": "vol2_p364_img9",
-      "volume": 2,
-      "pagina": 364,
-      "ano": null,
-      "data_publicacao": null,
-      "imagem": "assets/cartas/vol2/vol2_p364_img9.jpg",
-      "texto": "À\n\nEu\n\nN\nall\nÀ",
       "assuntos": [
         "Geral"
       ]
