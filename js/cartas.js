@@ -12,6 +12,29 @@
         dataPath: 'data/cartas.json'
     };
 
+    // Traduções para texto não disponível
+    const TRANSLATIONS = {
+        'pt': 'Texto não disponível.',
+        'en': 'Text not available.',
+        'es': 'Texto no disponible.'
+    };
+
+    // Detectar idioma atual
+    function getCurrentLanguage() {
+        const path = window.location.pathname;
+        if (path.includes('/en/')) return 'en';
+        if (path.includes('/es/')) return 'es';
+        return 'pt';
+    }
+
+    // Traduzir texto placeholder
+    function translatePlaceholder(texto) {
+        if (texto === 'Texto não disponível.') {
+            return TRANSLATIONS[getCurrentLanguage()];
+        }
+        return texto;
+    }
+
     // Estado da aplicação
     let state = {
         cartas: [],
@@ -472,7 +495,7 @@
             .join('');
 
         // Texto OCR
-        els.modalTexto.textContent = carta.texto || 'Texto não disponível';
+        els.modalTexto.textContent = translatePlaceholder(carta.texto) || TRANSLATIONS[getCurrentLanguage()];
 
         // Navegação
         els.modalPrev.disabled = indice === 0;
