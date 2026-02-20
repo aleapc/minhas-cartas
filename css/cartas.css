@@ -689,55 +689,58 @@
 }
 
 /* ==========================================
-   Efeito Lupa nas Cartas
+   Efeito Lupa no Modal
    ========================================== */
-.carta-thumb {
+.modal-imagem {
     position: relative;
 }
 
-.carta-thumb .magnifier {
+.modal-imagem .magnifier {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border: 3px solid var(--vol1-primary);
     border-radius: 50%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease;
     background-repeat: no-repeat;
     z-index: 100;
-    cursor: none;
 }
 
-.carta-thumb:hover .magnifier {
+.modal-imagem:hover .magnifier {
     opacity: 1;
 }
 
-.carta-thumb.magnifier-active {
+.modal-imagem.magnifier-active {
     cursor: none;
 }
 
-/* Ícone de lupa no canto */
-.carta-thumb::after {
-    content: '';
+/* Dica de lupa no modal */
+.modal-lupa-hint {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 24px;
-    height: 24px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
-    background-size: 14px;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.7);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
-.carta-card:hover .carta-thumb::after {
-    opacity: 1;
+.modal-lupa-hint svg {
+    width: 14px;
+    height: 14px;
+}
+
+.modal-imagem:hover .modal-lupa-hint {
+    opacity: 0;
 }
 
 /* ==========================================
@@ -826,11 +829,11 @@
     }
 
     /* Desabilitar lupa no mobile (touch) */
-    .carta-thumb .magnifier {
+    .modal-imagem .magnifier {
         display: none;
     }
 
-    .carta-thumb::after {
+    .modal-lupa-hint {
         display: none;
     }
 
