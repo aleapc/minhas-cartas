@@ -424,6 +424,7 @@
                     <span class="carta-volume vol${carta.volume}">Vol. ${carta.volume}</span>
                     <span class="carta-ano">${anoDisplay}</span>
                 </div>
+                <div class="magnifier"></div>
             </div>
             <div class="carta-info">
                 <p class="carta-pagina">Página ${carta.pagina}</p>
@@ -435,7 +436,75 @@
 
         card.addEventListener('click', () => abrirModal(indice));
 
+        // Configurar efeito lupa
+        const thumb = card.querySelector('.carta-thumb');
+        const img = thumb.querySelector('img');
+        const magnifier = thumb.querySelector('.magnifier');
+
+        setupMagnifier(thumb, img, magnifier);
+
         return card;
+    }
+
+    // Configuração do efeito lupa
+    function setupMagnifier(container, img, magnifier) {
+        const zoom = 2.5; // Nível de zoom
+        const magnifierSize = 150; // Tamanho da lupa em pixels
+
+        // Quando a imagem carregar, configurar o background
+        function initMagnifier() {
+            magnifier.style.backgroundImage = `url('${img.src}')`;
+        }
+
+        if (img.complete) {
+            initMagnifier();
+        } else {
+            img.addEventListener('load', initMagnifier);
+        }
+
+        container.addEventListener('mouseenter', function() {
+            container.classList.add('magnifier-active');
+        });
+
+        container.addEventListener('mouseleave', function() {
+            container.classList.remove('magnifier-active');
+        });
+
+        container.addEventListener('mousemove', function(e) {
+            const rect = container.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+
+            // Posição do mouse relativa ao container
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Posição da lupa (centralizada no cursor)
+            let magX = x - magnifierSize / 2;
+            let magY = y - magnifierSize / 2;
+
+            // Manter a lupa dentro dos limites
+            magX = Math.max(0, Math.min(magX, rect.width - magnifierSize));
+            magY = Math.max(0, Math.min(magY, rect.height - magnifierSize));
+
+            magnifier.style.left = magX + 'px';
+            magnifier.style.top = magY + 'px';
+
+            // Calcular a posição do background para o zoom
+            const imgX = e.clientX - imgRect.left;
+            const imgY = e.clientY - imgRect.top;
+
+            // Tamanho do background ampliado
+            const bgWidth = img.offsetWidth * zoom;
+            const bgHeight = img.offsetHeight * zoom;
+
+            magnifier.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
+
+            // Posição do background (centralizada no ponto do cursor)
+            const bgX = -(imgX * zoom - magnifierSize / 2);
+            const bgY = -(imgY * zoom - magnifierSize / 2);
+
+            magnifier.style.backgroundPosition = `${bgX}px ${bgY}px`;
+        });
     }
 
     function atualizarContador() {
