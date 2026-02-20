@@ -529,6 +529,22 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
+.volume-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.btn-amazon {
+    background: #FF9900;
+    color: #000;
+}
+
+.btn-amazon:hover {
+    background: #e88a00;
+    transform: translateY(-2px);
+}
+
 /* Botões */
 .btn {
     display: inline-block;
