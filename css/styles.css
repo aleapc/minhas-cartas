@@ -163,6 +163,25 @@ p {
     color: var(--vol2-primary);
 }
 
+.nav-menu a.nav-comprar {
+    background: #FF9900;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.nav-menu a.nav-comprar::after {
+    display: none;
+}
+
+.nav-menu a.nav-comprar:hover {
+    background: #e68a00;
+    color: #000;
+    transform: translateY(-1px);
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -1091,6 +1110,12 @@ p {
         display: flex;
     }
 
+    .nav-menu a.nav-comprar {
+        text-align: center;
+        padding: 10px 20px;
+        margin-top: var(--spacing-xs);
+    }
+
     .language-selector {
         position: absolute;
         right: 60px;
@@ -1312,5 +1337,118 @@ p {
         top: -8px;
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+/* ==========================================
+   Página de Compra
+   ========================================== */
+.comprar-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.comprar-intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.comprar-grid {
+    gap: var(--spacing-lg);
+}
+
+.comprar-grid .volume-card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--spacing-md);
+    align-items: start;
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.comprar-grid .volume-cover {
+    height: auto;
+}
+
+.comprar-grid .volume-cover img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.comprar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.btn-large {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.comprar-info {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border);
+}
+
+.comprar-info h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.info-card {
+    background: var(--background);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.info-card h4 {
+    color: var(--vol2-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .comprar-grid .volume-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .comprar-grid .volume-cover {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .comprar-buttons {
+        align-items: center;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
     }
 }
