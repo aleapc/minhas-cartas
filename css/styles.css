@@ -355,6 +355,26 @@ p {
     font-weight: 500;
 }
 
+.hero .btn-hero {
+    display: inline-block;
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--vol1-primary);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all var(--transition);
+    border: 2px solid var(--vol1-primary);
+}
+
+.hero .btn-hero:hover {
+    background: transparent;
+    color: var(--vol1-primary);
+    transform: translateY(-2px);
+}
+
 /* ==========================================
    Intro Section
    ========================================== */
