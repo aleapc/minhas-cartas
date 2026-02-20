@@ -1381,37 +1381,39 @@ p {
 
 .comprar-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-md);
 }
 
-.btn-large {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+.comprar-buttons .btn {
+    padding: 6px 14px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.comprar-buttons .btn-amazon {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .amazon-icon {
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
-    width: 16px;
-    height: 16px;
 }
 
-.btn-amazon.btn-large {
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(255, 153, 0, 0.2);
-    transition: all var(--transition);
+.comprar-buttons .btn-outline {
+    border: 1px solid var(--vol2-primary);
+    background: transparent;
+    color: var(--vol2-primary);
 }
 
-.btn-amazon.btn-large:hover {
-    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
-    transform: translateY(-1px);
+.comprar-buttons .btn-outline:hover {
+    background: var(--vol2-primary);
+    color: white;
 }
 
 .comprar-info {
