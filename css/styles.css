@@ -1387,16 +1387,29 @@ p {
 }
 
 .btn-large {
-    padding: 14px 28px;
-    font-size: 1.1rem;
-    display: flex;
+    padding: 12px 24px;
+    font-size: 1rem;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.btn-icon {
-    font-size: 1.2rem;
+.amazon-icon {
+    flex-shrink: 0;
+}
+
+.btn-amazon.btn-large {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+    transition: all var(--transition);
+}
+
+.btn-amazon.btn-large:hover {
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .comprar-info {
