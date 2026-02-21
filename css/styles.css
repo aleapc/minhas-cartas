@@ -713,6 +713,13 @@ p {
 .doar-desc {
     color: var(--text-secondary);
     font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.doar-valor {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #F04E23;
     margin-bottom: var(--spacing-md);
 }
 
