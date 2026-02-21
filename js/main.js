@@ -206,6 +206,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Magnify Glass - JFK Letter
+    const magnifyContainers = document.querySelectorAll('.magnify-container');
+
+    magnifyContainers.forEach(container => {
+        const img = container.querySelector('.magnify-image');
+        const glass = container.querySelector('.magnify-glass');
+
+        if (!img || !glass) return;
+
+        const zoom = 2.5; // Zoom level
+
+        // Set background image for the glass
+        img.addEventListener('load', function() {
+            glass.style.backgroundImage = `url('${img.src}')`;
+        });
+
+        // If image already loaded
+        if (img.complete) {
+            glass.style.backgroundImage = `url('${img.src}')`;
+        }
+
+        container.addEventListener('mousemove', function(e) {
+            const rect = img.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Check if cursor is within image bounds
+            if (x < 0 || x > rect.width || y < 0 || y > rect.height) {
+                glass.style.opacity = '0';
+                return;
+            }
+
+            // Position the glass
+            const glassSize = glass.offsetWidth;
+            glass.style.left = (x - glassSize / 2) + 'px';
+            glass.style.top = (y - glassSize / 2) + 'px';
+
+            // Calculate background position
+            const bgX = (x / rect.width) * 100;
+            const bgY = (y / rect.height) * 100;
+
+            glass.style.backgroundSize = `${rect.width * zoom}px ${rect.height * zoom}px`;
+            glass.style.backgroundPosition = `${bgX}% ${bgY}%`;
+        });
+
+        container.addEventListener('mouseleave', function() {
+            glass.style.opacity = '0';
+            glass.style.transform = 'scale(0.5)';
+        });
+
+        container.addEventListener('mouseenter', function() {
+            glass.style.opacity = '1';
+            glass.style.transform = 'scale(1)';
+        });
+    });
+
     // Language notification
     function showLanguageNotification(langName) {
         // Remove existing notification
