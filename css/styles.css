@@ -164,22 +164,17 @@ p {
 }
 
 .nav-menu a.nav-comprar {
-    background: #FF9900;
-    color: #000;
-    padding: 6px 14px;
-    border-radius: 6px;
+    color: #FF9900;
     font-weight: 600;
-    transition: background var(--transition), transform var(--transition);
-}
-
-.nav-menu a.nav-comprar::after {
-    display: none;
+    transition: color var(--transition);
 }
 
 .nav-menu a.nav-comprar:hover {
-    background: #e68a00;
-    color: #000;
-    transform: translateY(-1px);
+    color: #e68a00;
+}
+
+.nav-menu a.nav-comprar.active {
+    color: #FF9900;
 }
 
 .nav-toggle {
@@ -613,22 +608,17 @@ p {
    Página de Doação
    ========================================== */
 .nav-menu a.nav-doar {
-    background: #F04E23;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 6px;
+    color: #F04E23;
     font-weight: 600;
-    transition: background var(--transition), transform var(--transition);
-}
-
-.nav-menu a.nav-doar::after {
-    display: none;
+    transition: color var(--transition);
 }
 
 .nav-menu a.nav-doar:hover {
-    background: #d94420;
-    color: #fff;
-    transform: translateY(-1px);
+    color: #d94420;
+}
+
+.nav-menu a.nav-doar.active {
+    color: #F04E23;
 }
 
 .doar-header {
@@ -1438,10 +1428,9 @@ p {
         display: flex;
     }
 
-    .nav-menu a.nav-comprar {
+    .nav-menu a.nav-comprar,
+    .nav-menu a.nav-doar {
         text-align: center;
-        padding: 10px 20px;
-        margin-top: var(--spacing-xs);
     }
 
     .language-selector {
