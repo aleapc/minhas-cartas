@@ -165,9 +165,9 @@ p {
 
 .nav-menu a.nav-comprar {
     color: #FF9900;
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 12px;
-    border: 1.5px solid #FF9900;
+    border: 1px solid #FF9900;
     border-radius: 4px;
     transition: all var(--transition);
 }
@@ -617,9 +617,9 @@ p {
    ========================================== */
 .nav-menu a.nav-doar {
     color: #F04E23;
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 12px;
-    border: 1.5px solid #F04E23;
+    border: 1px solid #F04E23;
     border-radius: 4px;
     transition: all var(--transition);
 }
