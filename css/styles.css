@@ -564,6 +564,51 @@ p {
     transform: translateY(-2px);
 }
 
+.btn-hotmart {
+    background: #F04E23;
+    color: #fff;
+}
+
+.btn-hotmart:hover {
+    background: #d94420;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Seção de Doação */
+.doacao-info {
+    background: linear-gradient(135deg, var(--vol1-light) 0%, #fff 100%);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border-left: 4px solid #F04E23;
+    margin-bottom: var(--spacing-md);
+}
+
+.doacao-info h2 {
+    color: #F04E23;
+}
+
+.doacao-destaque {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.doacao-destaque p {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+}
+
+.doacao-destaque a {
+    color: #F04E23;
+    font-weight: 600;
+}
+
+.doacao-destaque a:hover {
+    text-decoration: underline;
+}
+
 /* Botões */
 .btn {
     display: inline-block;
