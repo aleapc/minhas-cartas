@@ -166,11 +166,19 @@ p {
 .nav-menu a.nav-comprar {
     color: #FF9900;
     font-weight: 600;
-    transition: color var(--transition);
+    padding: 5px 12px;
+    border: 1.5px solid #FF9900;
+    border-radius: 4px;
+    transition: all var(--transition);
+}
+
+.nav-menu a.nav-comprar::after {
+    display: none;
 }
 
 .nav-menu a.nav-comprar:hover {
-    color: #e68a00;
+    background: #FF9900;
+    color: #000;
 }
 
 .nav-menu a.nav-comprar.active {
@@ -610,11 +618,19 @@ p {
 .nav-menu a.nav-doar {
     color: #F04E23;
     font-weight: 600;
-    transition: color var(--transition);
+    padding: 5px 12px;
+    border: 1.5px solid #F04E23;
+    border-radius: 4px;
+    transition: all var(--transition);
+}
+
+.nav-menu a.nav-doar::after {
+    display: none;
 }
 
 .nav-menu a.nav-doar:hover {
-    color: #d94420;
+    background: #F04E23;
+    color: #fff;
 }
 
 .nav-menu a.nav-doar.active {
