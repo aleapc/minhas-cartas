@@ -7,100 +7,187 @@
     <meta name="description" content="As Sete Vidas de Silvano — autobiografia de Silvano Corrêa. Uma vida contada com honestidade, memória e emoção.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .book-hero {
+            background: linear-gradient(135deg, #1a2744 0%, #2a3f6f 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .book-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #f9c85a;
+        }
+        .book-hero .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .book-hero .author {
+            font-size: 1rem;
+            opacity: 0.75;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .book-nav-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .prefacio-section {
+            max-width: 720px;
+            margin: 60px auto;
+            padding: 0 2rem;
+        }
+        .prefacio-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1a2744;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .prefacio-section p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .prefacio-section .first-letter::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a2744;
+            float: left;
+            line-height: 0.8;
+            margin: 0.1em 0.1em 0 0;
+        }
+        .prefacio-divider {
+            border: none;
+            border-top: 2px solid #f9c85a;
+            width: 60px;
+            margin: 2.5rem auto;
+        }
+        .kindle-cta {
+            background: #f8f4ee;
+            text-align: center;
+            padding: 50px 2rem;
+            margin-top: 60px;
+        }
+        .kindle-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #1a2744;
+            margin-bottom: 1rem;
+        }
+        .kindle-cta p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #ff9900;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { background: #e08800; }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="/" class="logo">Silvano Corrêa</a>
-            <ul class="nav-menu">
-                <li><a href="cartas-home.html">Minhas Cartas</a></li>
-                <li><a href="sete-vidas.html" class="active">Sete Vidas</a></li>
-                <li><a href="sobre.html">Sobre o Autor</a></li>
-                <li><a href="volume1.html">Volume 1</a></li>
-                <li><a href="volume2.html">Volume 2</a></li>
-                <li><a href="cartas.html">Cartas</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-logo">Silvano Corrêa</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="cartas-home.html">Minhas Cartas</a></li>
+                        <li><a href="sete-vidas.html" class="active">Sete Vidas</a></li>
+                        <li><a href="sobre.html">Sobre o Autor</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>As Sete Vidas de Silvano</h1>
-                <p class="subtitle">autobiografia</p>
-                <p class="author">Silvano Corrêa</p>
-            </div>
-        </section>
-
-        <section class="intro">
-            <div class="container">
-                <p class="intro-text">
-                    Uma vida vivida com intensidade, curiosidade e propósito. Das ruas de São Paulo às universidades americanas, das multinacionais ao empreendedorismo, das artes marciais à filosofia espírita — Silvano Corrêa conta, com honestidade e emoção, as múltiplas fases de uma existência singular.
-                </p>
-            </div>
-        </section>
-
-        <section id="prefacio" class="destaque-section">
-            <div class="container">
-                <div class="destaque-texto" style="max-width:720px;margin:0 auto">
-                    <h2>Prefácio</h2>
-                    <p class="subtitulo"><em>As Sete Vidas de Silvano</em></p>
-                    <blockquote class="carta-conteudo">
-                        <p><em>O prefácio do livro será publicado aqui em breve.</em></p>
-                    </blockquote>
-                    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
-                        <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" rel="noopener" class="btn btn-primary">Comprar no Kindle</a>
-                        <a href="/" class="btn btn-secondary">&#8592; Voltar à Página Inicial</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-preview">
-            <div class="container">
-                <div class="about-preview-grid">
-                    <div class="about-preview-photo">
-                        <img src="assets/images/silvano-correa.jpg" alt="Silvano Corrêa">
-                    </div>
-                    <div class="about-content">
-                        <h2>Sobre o Autor</h2>
-                        <p>
-                            Silvano Corrêa nasceu em São Paulo em fevereiro de 1939. Formado em Economia e Matemática pela Duquesne University (Pittsburgh, EUA) em 1962, viveu e estudou nos Estados Unidos por dez anos, desenvolvendo uma visão crítica de brasileiro sobre duas culturas.
-                        </p>
-                        <p>
-                            Com uma carreira em multinacionais e empreendedorismo, fundou a Micro-Total Sistemas em 1980. Faixa preta em Aikidô e estudioso do Espiritismo Kardecista, dedica sua vida ao estudo, à reflexão e à participação ativa na sociedade.
-                        </p>
-                        <a href="sobre.html" class="btn btn-outline">Conheça a História Completa</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
+    <section class="book-hero">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h4>As Sete Vidas de Silvano</h4>
-                    <p>autobiografia</p>
-                    <p class="copyright">&copy; 2025 Silvano Corrêa. Todos os direitos reservados.</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p>scorrea@uol.com</p>
-                </div>
+            <h1>As Sete Vidas de Silvano</h1>
+            <p class="subtitle">Uma autobiografia</p>
+            <p class="author">Silvano Corrêa</p>
+            <div class="book-nav-btns">
+                <a href="#prefacio" class="btn-primary">Ler o Prefácio</a>
+                <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="btn-primary" style="background:#1a2744;">Comprar no Kindle</a>
             </div>
+        </div>
+    </section>
+
+    <section class="prefacio-section" id="prefacio">
+        <h2>Prefácio</h2>
+        <hr class="prefacio-divider">
+
+        <p class="first-letter">Aos oitenta e sete anos, tenho a sensação de estar vivendo de hora extra.</p>
+
+        <p>Não uso essa expressão como metáfora. Digo isso de maneira bastante literal. Ao longo da vida houve vários momentos em que a história poderia ter terminado. A queda entre a barca e o cais da Praça XV, em março de 1948, alguns acidentes de carro ao longo dos anos e, mais tarde, um episódio cardíaco sério — qualquer um deles poderia ter sido o ponto final.</p>
+
+        <p>No entanto, por razões que não sei explicar completamente, continuo aqui.</p>
+
+        <p>Com o passar do tempo comecei a pensar que talvez exista um motivo para isso. Talvez a vida tenha me concedido esse tempo adicional para organizar lembranças, compreender melhor os caminhos percorridos e deixar algum registro para aqueles que virão depois de mim.</p>
+
+        <p>Este livro nasce dessa ideia.</p>
+
+        <p>Não é um livro de memórias escrito por vaidade nem por desejo de autopromoção. É antes uma tentativa de organizar uma história longa, feita de muitas etapas diferentes, e transformá‑la em algo que possa ser útil para minha família, especialmente para meus netos.</p>
+
+        <p>Quando somos jovens, raramente pensamos em olhar para trás. Estamos ocupados demais vivendo. Há trabalho, responsabilidades, filhos para criar, decisões para tomar. A vida segue em frente com velocidade e quase não sobra tempo para refletir sobre o que tudo aquilo significa.</p>
+
+        <p>Somente mais tarde, quando os anos já se acumularam e a pressa diminui, surge a possibilidade de olhar para trás com mais calma. É nesse momento que começamos a perceber certos padrões, certos encontros, certas coincidências que antes pareciam apenas episódios isolados.</p>
+
+        <p>Minha vida, vista dessa forma, parece ter sido composta por várias fases bastante distintas — quase como se tivesse sido vivida em capítulos diferentes. Cada fase trouxe seus desafios, suas descobertas e também, suas dificuldades.</p>
+
+        <p>Por isso escolhi organizar este livro em torno da ideia de "sete vidas". Não no sentido literal, mas como uma maneira de descrever as grandes etapas que marcaram minha trajetória.</p>
+
+        <p>Algumas dessas fases foram tranquilas. Outras foram mais difíceis. Em algumas delas aprendi muito; em outras apenas fiz o que era necessário naquele momento.</p>
+
+        <p>O que todas têm em comum é que, olhando hoje, percebo como cada etapa acabou influenciando a seguinte.</p>
+
+        <p>Se existe uma mensagem neste livro, talvez seja apenas esta: a vida raramente segue um plano perfeito. Muitas decisões são tomadas com informação incompleta, muitos caminhos surgem por acaso, e frequentemente só entendemos o significado de certas escolhas muitos anos depois.</p>
+
+        <p>Escrevo estas páginas com essa consciência.</p>
+
+        <p>O passaporte já tem o visto; falta apenas o carimbo final, como gosto de dizer. Antes que esse carimbo venha, quis registrar um pouco do caminho percorrido.</p>
+
+        <p>Se este relato servir para que meus filhos e netos conheçam melhor a história da família — ou simplesmente para que entendam um pouco melhor o mundo em que vivi — então já terá cumprido seu objetivo.</p>
+
+        <hr class="prefacio-divider">
+        <p style="text-align:center; font-style:italic; color:#555;">— Silvano Corrêa</p>
+    </section>
+
+    <section class="kindle-cta">
+        <h3>Continue a leitura no Kindle</h3>
+        <p>O livro completo está disponível na Amazon Kindle Store.</p>
+        <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="btn-primary">Comprar no Kindle</a>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Silvano Corrêa. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
 </body>
 </html>
