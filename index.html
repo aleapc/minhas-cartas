@@ -27,14 +27,12 @@
         .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;color:#1a2744;margin-bottom:.5rem}
         .card .card-subtitle{font-size:.9rem;color:#888;font-style:italic;margin-bottom:1.1rem}
         .card p{font-size:.98rem;line-height:1.7;color:#555;margin-bottom:1.8rem;flex-grow:1}
-        .btn{display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Source Sans Pro',sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;transition:background .2s,color .2s,transform .15s;cursor:pointer}
-        .btn-primary{background:#ff9900;color:#fff}
-        .btn-primary:hover{background:#e68a00;transform:scale(1.03)}
-        .btn-secondary{background:transparent;color:#1a2744;border:2px solid #1a2744}
-        .btn-secondary:hover{background:#1a2744;color:#fff;transform:scale(1.03)}
-    .btn-kindle{background:#ff9900;color:#1a2744;border:2px solid #ff9900;margin-top:.6rem}
-    .btn-kindle:hover{background:#e68a00;border-color:#e68a00;color:#fff;transform:scale(1.03)}
-    .card-btns{display:flex;flex-direction:column;gap:.5rem;width:100%;margin-top:.7rem}
+        .card-btns{display:flex;flex-direction:column;gap:.6rem;width:100%}
+        .btn{display:block;width:100%;padding:.7rem 1.5rem;border-radius:6px;font-family:'Source Sans Pro',sans-serif;font-size:.93rem;font-weight:600;text-decoration:none;text-align:center;transition:background .2s,color .2s,transform .15s;cursor:pointer;border:2px solid transparent}
+        .btn-primary{background:#ff9900;color:#fff;border-color:#ff9900}
+        .btn-primary:hover{background:#e68a00;border-color:#e68a00;transform:scale(1.02)}
+        .btn-outline{background:transparent;color:#1a2744;border-color:#1a2744}
+        .btn-outline:hover{background:#1a2744;color:#fff;transform:scale(1.02)}
         .footer{background:#1a2744;color:#aab;text-align:center;padding:1.8rem 2rem;font-size:.85rem;margin-top:auto}
         .footer a{color:#ff9900;text-decoration:none}
         @media(max-width:600px){.nav-menu{display:none}.hero{padding:3.5rem 1.5rem 3rem}.cards-section{padding:2.5rem 1rem 3.5rem}}
@@ -45,6 +43,7 @@
         <a href="/" class="logo">Silvano Corrêa</a>
         <ul class="nav-menu">
             <li><a href="cartas-home.html">Minhas Cartas</a></li>
+            <li><a href="sete-vidas.html">Sete Vidas</a></li>
             <li><a href="sobre.html">Sobre o Autor</a></li>
             <li><a href="contato.html">Contato</a></li>
         </ul>
@@ -60,19 +59,22 @@
                 <h2>Minhas Cartas</h2>
                 <p class="card-subtitle">Coletânea de Cartas ao Jornal</p>
                 <p>Ao longo de décadas, Silvano Corrêa expressou seu pensamento no maior jornal do Brasil, <em>O Estado de São Paulo</em>. Esta coletânea reúne cartas publicadas entre 1958 e 2025 — um painel vivo da história e do humanismo brasileiro.</p>
-                <a href="cartas-home.html" class="btn btn-primary">Ler as Cartas</a>
-        <div class="card-btns">
-          <a href="https://www.amazon.com.br/dp/B0GPFH9VQ3" target="_blank" rel="noopener" class="btn btn-kindle">🛒 Comprar Vol. 1</a>
-          <a href="https://www.amazon.com.br/dp/B0GPFNKYLN" target="_blank" rel="noopener" class="btn btn-kindle">🛒 Comprar Vol. 2</a>
-        </div>
+                <div class="card-btns">
+                    <a href="cartas-home.html" class="btn btn-primary">Ler as Cartas</a>
+                    <a href="https://www.amazon.com.br/dp/B0GPFH9VQ3" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle — Vol. 1</a>
+                    <a href="https://www.amazon.com.br/dp/B0GPFNKYLN" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle — Vol. 2</a>
+                </div>
             </article>
             <article class="card">
                 <div class="card-icon">&#x1F4D6;</div>
                 <h2>As Sete Vidas de Silvano</h2>
                 <p class="card-subtitle">Autobiografia — disponível no Kindle</p>
                 <p>A autobiografia de Silvano Corrêa: uma vida contada com honestidade, memória e emoção. Disponível para leitura digital na plataforma Amazon Kindle.</p>
-                <a href="prefacio.html" class="btn btn-secondary">📖 Ler o Prefácio</a>
-        <a href="https://www.amazon.com.br/dp/B0GPFNKYLN" target="_blank" rel="noopener" class="btn btn-kindle" style="margin-top:.7rem">🛒 Comprar no Kindle</a>
+                <div class="card-btns">
+                    <a href="sete-vidas.html" class="btn btn-primary">Conhecer o Livro</a>
+                    <a href="sete-vidas.html#prefacio" class="btn btn-outline">Ler o Prefácio</a>
+                    <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle</a>
+                </div>
             </article>
         </div>
     </main>
