@@ -20,19 +20,21 @@
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            color: #f9c85a;
+            color: #f9c85a !important;
         }
         .book-hero .subtitle {
             font-size: 1.25rem;
             opacity: 0.9;
             font-style: italic;
             margin-bottom: 1.5rem;
+            color: #fff;
         }
         .book-hero .author {
             font-size: 1rem;
             opacity: 0.75;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            color: #fff;
         }
         .book-nav-btns {
             display: flex;
@@ -92,7 +94,7 @@
             color: #555;
             margin-bottom: 1.5rem;
         }
-        .btn-primary {
+        .sv-btn-primary {
             display: inline-block;
             background: #ff9900;
             color: #fff;
@@ -103,25 +105,40 @@
             font-weight: 600;
             font-size: 1rem;
             transition: background 0.2s;
+            margin: 0.3rem;
         }
-        .btn-primary:hover { background: #e08800; }
+        .sv-btn-primary:hover { background: #e08800; color: #fff; }
+        .sv-btn-outline {
+            display: inline-block;
+            background: #fff;
+            color: #1a2744;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #1a2744;
+            transition: all 0.2s;
+            margin: 0.3rem;
+        }
+        .sv-btn-outline:hover { background: #1a2744; color: #fff; }
+        .site-footer { background: #1a2744; color: rgba(255,255,255,.6); text-align: center; padding: 1.5rem; font-size: .85rem; }
     </style>
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="site-logo">Silvano Corrêa</a>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="cartas-home.html">Minhas Cartas</a></li>
-                        <li><a href="sete-vidas.html" class="active">Sete Vidas</a></li>
-                        <li><a href="sobre.html">Sobre o Autor</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Silvano Corrêa</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="cartas-home.html">Minhas Cartas</a></li>
+                    <li><a href="sete-vidas.html" class="active">Sete Vidas</a></li>
+                    <li><a href="sobre.html">Sobre o Autor</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -131,8 +148,8 @@
             <p class="subtitle">Uma autobiografia</p>
             <p class="author">Silvano Corrêa</p>
             <div class="book-nav-btns">
-                <a href="#prefacio" class="btn-primary">Ler o Prefácio</a>
-                <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="btn-primary" style="background:#1a2744;">Comprar no Kindle</a>
+                <a href="#prefacio" class="sv-btn-primary">Ler o Prefácio</a>
+                <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="sv-btn-outline">Comprar no Kindle</a>
             </div>
         </div>
     </section>
@@ -159,7 +176,7 @@
 
         <p>Minha vida, vista dessa forma, parece ter sido composta por várias fases bastante distintas — quase como se tivesse sido vivida em capítulos diferentes. Cada fase trouxe seus desafios, suas descobertas e também, suas dificuldades.</p>
 
-        <p>Por isso escolhi organizar este livro em torno da ideia de "sete vidas". Não no sentido literal, mas como uma maneira de descrever as grandes etapas que marcaram minha trajetória.</p>
+        <p>Por isso escolhi organizar este livro em torno da ideia de “sete vidas”. Não no sentido literal, mas como uma maneira de descrever as grandes etapas que marcaram minha trajetória.</p>
 
         <p>Algumas dessas fases foram tranquilas. Outras foram mais difíceis. Em algumas delas aprendi muito; em outras apenas fiz o que era necessário naquele momento.</p>
 
@@ -180,7 +197,7 @@
     <section class="kindle-cta">
         <h3>Continue a leitura no Kindle</h3>
         <p>O livro completo está disponível na Amazon Kindle Store.</p>
-        <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="btn-primary">Comprar no Kindle</a>
+        <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="sv-btn-primary">Comprar no Kindle</a>
     </section>
 
     <footer class="site-footer">
