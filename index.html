@@ -15,7 +15,18 @@
             background: linear-gradient(160deg, #1a2744 0%, #2a3f6f 100%);
             color: #fff;
             text-align: center;
-            padding: clamp(3rem,8vw,5rem) 2rem clamp(2.5rem,6vw,4rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 2rem;
+            min-height: 200px;
+        }
+        .portal-hero-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .portal-hero h1 {
             font-family: 'Playfair Display', Georgia, serif;
@@ -199,7 +210,7 @@
 
     <!-- Hero portal -->
     <section class="portal-hero">
-        <div class="container">
+        <div class="portal-hero-inner">
             <h1>Bem-vindo às Obras de Silvano Correa</h1>
             <hr class="hero-divider">
             <p class="tagline">Escritor, idealista e cronista do cotidiano brasileiro.<br>Explore suas duas obras disponíveis ao leitor.</p>
