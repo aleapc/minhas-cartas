@@ -4,82 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silvano Corrêa - Obra Literária</title>
-    <meta name="description" content="Silvano Corrêa - escritor e idealista. Conheça suas obras: Minhas Cartas e As Sete Vidas de Silvano.">
+    <meta name="description" content="Bem-vindo às obras de Silvano Corrêa. Explore Minhas Cartas e As Sete Vidas de Silvano.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Source Sans Pro','Segoe UI',sans-serif;background:#fafafa;color:#2d2d2d;min-height:100vh;display:flex;flex-direction:column}
-        .nav-container{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-        .logo{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;color:#1a2744;text-decoration:none;letter-spacing:.01em}
-        .nav-menu{list-style:none;display:flex;gap:1.5rem}
-        .nav-menu a{font-size:.95rem;color:#2d2d2d;text-decoration:none;transition:color .2s}
-        .nav-menu a:hover{color:#ff9900}
-        .hero{background:linear-gradient(135deg,#1a2744 0%,#0f1e3d 100%);color:#fff;text-align:center;padding:5rem 2rem 4rem}
-        .hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1rem;letter-spacing:.02em}
-        .hero p{font-size:clamp(1rem,2.5vw,1.2rem);font-weight:300;max-width:600px;margin:0 auto;opacity:.88;line-height:1.65}
+        body{font-family:'Source Sans Pro',sans-serif;background:#f8f4ee;color:#2a2a2a}
+        .portal-hero{background:linear-gradient(160deg,#1a2744 0%,#2a3f6f 100%);color:#fff;text-align:center;padding:clamp(3rem,8vw,5rem) 2rem clamp(2.5rem,6vw,4rem)}
+        .portal-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.01em;margin-bottom:.5rem}
+        .portal-hero .tagline{font-size:clamp(.95rem,2.5vw,1.2rem);font-weight:300;max-width:600px;margin:0 auto;opacity:.88;line-height:1.65}
         .cards-section{padding:4rem 2rem 5rem;display:flex;justify-content:center}
-        .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:860px;width:100%}
-        .card{background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.09);padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .25s,box-shadow .25s}
+        .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:900px;width:100%}
+        .card{background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.09);padding:2rem 2rem 2.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .25s,box-shadow .25s}
         .card:hover{transform:translateY(-6px);box-shadow:0 8px 36px rgba(0,0,0,.13)}
-        .card-icon{font-size:3rem;margin-bottom:1.2rem;line-height:1}
+        .card-cover{width:100%;max-width:220px;margin-bottom:1.5rem;border-radius:6px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+        .card-cover img{width:100%;height:auto;display:block}
+        .card-cover-placeholder{width:220px;height:300px;background:linear-gradient(135deg,#1a2744 0%,#2a3f6f 100%);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+        .card-cover-placeholder span{font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,.7);padding:1rem;text-align:center;line-height:1.4}
         .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;color:#1a2744;margin-bottom:.5rem}
         .card .card-subtitle{font-size:.9rem;color:#888;font-style:italic;margin-bottom:1.1rem}
         .card p{font-size:.98rem;line-height:1.7;color:#555;margin-bottom:1.8rem;flex-grow:1}
         .card-btns{display:flex;flex-direction:column;gap:.6rem;width:100%}
-        .btn{display:block;width:100%;padding:.7rem 1.5rem;border-radius:6px;font-family:'Source Sans Pro',sans-serif;font-size:.93rem;font-weight:600;text-decoration:none;text-align:center;transition:background .2s,color .2s,transform .15s;cursor:pointer;border:2px solid transparent}
-        .btn-primary{background:#ff9900;color:#fff;border-color:#ff9900}
-        .btn-primary:hover{background:#e68a00;border-color:#e68a00;transform:scale(1.02)}
-        .btn-outline{background:transparent;color:#1a2744;border-color:#1a2744}
-        .btn-outline:hover{background:#1a2744;color:#fff;transform:scale(1.02)}
-        .footer{background:#1a2744;color:#aab;text-align:center;padding:1.8rem 2rem;font-size:.85rem;margin-top:auto}
-        .footer a{color:#ff9900;text-decoration:none}
-        @media(max-width:600px){.nav-menu{display:none}.hero{padding:3.5rem 1.5rem 3rem}.cards-section{padding:2.5rem 1rem 3.5rem}}
+        .btn{display:block;width:100%;padding:.7rem 1.5rem;border-radius:6px;font-family:'Source Sans Pro',sans-serif;font-size:.93rem;font-weight:600;text-decoration:none;text-align:center;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+        .btn-primary{background:#ff9900;color:#fff;border:2px solid #ff9900}
+        .btn-primary:hover{background:#e08800;border-color:#e08800}
+        .btn-outline{background:#fff;color:#1a2744;border:2px solid #1a2744}
+        .btn-outline:hover{background:#1a2744;color:#fff}
+        .site-footer{background:#1a2744;color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:.85rem}
     </style>
 </head>
 <body>
-    <nav class="nav-container">
-        <a href="/" class="logo">Silvano Corrêa</a>
-        <ul class="nav-menu">
-            <li><a href="cartas-home.html">Minhas Cartas</a></li>
-            <li><a href="sete-vidas.html">Sete Vidas</a></li>
-            <li><a href="sobre.html">Sobre o Autor</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
-    <header class="hero">
-        <h1>Bem-vindo às Obras de Silvano Corrêa</h1>
-        <p>Escritor, idealista e cronista do cotidiano brasileiro. Explore suas duas obras disponíveis ao leitor.</p>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-logo">Silvano Corrêa</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="cartas-home.html">Minhas Cartas</a></li>
+                        <li><a href="sete-vidas.html">Sete Vidas</a></li>
+                        <li><a href="sobre.html">Sobre o Autor</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main class="cards-section">
+
+    <section class="portal-hero">
+        <div class="container">
+            <h1>Bem-vindo às Obras de Silvano Corrêa</h1>
+            <p class="tagline">Escritor, idealista e cronista do cotidiano brasileiro. Explore suas duas obras disponíveis ao leitor.</p>
+        </div>
+    </section>
+
+    <section class="cards-section">
         <div class="cards-grid">
-            <article class="card">
-                <div class="card-icon">&#x2709;&#xFE0F;</div>
+
+            <!-- Card Minhas Cartas -->
+            <div class="card">
+                <div class="card-cover">
+                    <img src="assets/images/capa-vol1.png" alt="Minhas Cartas Volume 1 - capa">
+                </div>
                 <h2>Minhas Cartas</h2>
                 <p class="card-subtitle">Coletânea de Cartas ao Jornal</p>
-                <p>Ao longo de décadas, Silvano Corrêa expressou seu pensamento no maior jornal do Brasil, <em>O Estado de São Paulo</em>. Esta coletânea reúne cartas publicadas entre 1958 e 2025 — um painel vivo da história e do humanismo brasileiro.</p>
+                <p>Ao longo de décadas, Silvano Corrêa expressou seu pensamento no maior jornal do Brasil, O Estado de S. Paulo. Esta coletânea reúne cartas publicadas entre 1958 e 2025 — um painel vivo da história e do humanismo brasileiro.</p>
                 <div class="card-btns">
                     <a href="cartas-home.html" class="btn btn-primary">Ler as Cartas</a>
-                    <a href="https://www.amazon.com.br/dp/B0GPFH9VQ3" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle — Vol. 1</a>
-                    <a href="https://www.amazon.com.br/dp/B0GPFNKYLN" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle — Vol. 2</a>
+                    <a href="https://www.amazon.com.br/dp/B0GPFH9VQ3" target="_blank" class="btn btn-outline">Comprar no Kindle — Vol. 1</a>
+                    <a href="https://www.amazon.com.br/dp/B0GPFNKYLN" target="_blank" class="btn btn-outline">Comprar no Kindle — Vol. 2</a>
                 </div>
-            </article>
-            <article class="card">
-                <div class="card-icon">&#x1F4D6;</div>
+            </div>
+
+            <!-- Card As Sete Vidas de Silvano -->
+            <div class="card">
+                <div class="card-cover-placeholder">
+                    <span>As Sete Vidas<br>de Silvano</span>
+                </div>
                 <h2>As Sete Vidas de Silvano</h2>
-                <p class="card-subtitle">Autobiografia — disponível no Kindle</p>
-                <p>A autobiografia de Silvano Corrêa: uma vida contada com honestidade, memória e emoção. Disponível para leitura digital na plataforma Amazon Kindle.</p>
+                <p class="card-subtitle">Autobiografia</p>
+                <p>Uma autobiografia que percorre as grandes etapas de uma vida vivida com intensidade. Das águas da Baía de Guanabara às páginas do Estadão, Silvano Corrêa conta sua história com honestidade, memória e emoção.</p>
                 <div class="card-btns">
-                    <a href="sete-vidas.html" class="btn btn-primary">Conhecer o Livro</a>
-                    <a href="sete-vidas.html#prefacio" class="btn btn-outline">Ler o Prefácio</a>
-                    <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" rel="noopener" class="btn btn-outline">Comprar no Kindle</a>
+                    <a href="sete-vidas.html#prefacio" class="btn btn-primary">Ler o Prefácio</a>
+                    <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Silvano+Correa" target="_blank" class="btn btn-outline">Comprar no Kindle</a>
                 </div>
-            </article>
+            </div>
+
         </div>
-    </main>
-    <footer class="footer">
-        <p>&copy; Silvano Corrêa &mdash; Todos os direitos reservados. &nbsp;|&nbsp; <a href="contato.html">Contato</a></p>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Silvano Corrêa. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
 </body>
 </html>
