@@ -3,204 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Cartas - Silvano Corrêa</title>
-    <meta name="description" content="Minhas Cartas - expressões de um idealista. Coletânea de cartas publicadas por Silvano Corrêa no jornal O Estado de São Paulo entre 1958 e 2025.">
+    <title>Silvano Corrêa - Obra Literária</title>
+    <meta name="description" content="Silvano Corrêa - escritor e idealista. Conheça suas obras: Minhas Cartas e As Sete Vidas de Gabo.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Source Sans Pro','Segoe UI',sans-serif;background:#fafafa;color:#2d2d2d;min-height:100vh;display:flex;flex-direction:column}
+        .nav-container{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+        .logo{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:700;color:#1a2744;text-decoration:none;letter-spacing:.01em}
+        .nav-menu{list-style:none;display:flex;gap:1.5rem}
+        .nav-menu a{font-size:.95rem;color:#2d2d2d;text-decoration:none;transition:color .2s}
+        .nav-menu a:hover{color:#ff9900}
+        .hero{background:linear-gradient(135deg,#1a2744 0%,#0f1e3d 100%);color:#fff;text-align:center;padding:5rem 2rem 4rem}
+        .hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1rem;letter-spacing:.02em}
+        .hero p{font-size:clamp(1rem,2.5vw,1.2rem);font-weight:300;max-width:600px;margin:0 auto;opacity:.88;line-height:1.65}
+        .cards-section{padding:4rem 2rem 5rem;display:flex;justify-content:center}
+        .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:860px;width:100%}
+        .card{background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.09);padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .25s,box-shadow .25s}
+        .card:hover{transform:translateY(-6px);box-shadow:0 8px 36px rgba(0,0,0,.13)}
+        .card-icon{font-size:3rem;margin-bottom:1.2rem;line-height:1}
+        .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;color:#1a2744;margin-bottom:.5rem}
+        .card .card-subtitle{font-size:.9rem;color:#888;font-style:italic;margin-bottom:1.1rem}
+        .card p{font-size:.98rem;line-height:1.7;color:#555;margin-bottom:1.8rem;flex-grow:1}
+        .btn{display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Source Sans Pro',sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;transition:background .2s,color .2s,transform .15s;cursor:pointer}
+        .btn-primary{background:#ff9900;color:#fff}
+        .btn-primary:hover{background:#e68a00;transform:scale(1.03)}
+        .btn-secondary{background:transparent;color:#1a2744;border:2px solid #1a2744}
+        .btn-secondary:hover{background:#1a2744;color:#fff;transform:scale(1.03)}
+        .footer{background:#1a2744;color:#aab;text-align:center;padding:1.8rem 2rem;font-size:.85rem;margin-top:auto}
+        .footer a{color:#ff9900;text-decoration:none}
+        @media(max-width:600px){.nav-menu{display:none}.hero{padding:3.5rem 1.5rem 3rem}.cards-section{padding:2.5rem 1rem 3.5rem}}
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">Silvano Corrêa</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="sobre.html">Sobre o Autor</a></li>
-                <li><a href="volume1.html">Volume 1</a></li>
-                <li><a href="volume2.html">Volume 2</a></li>
-                <li><a href="cartas.html">Cartas</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+    <nav class="nav-container">
+        <a href="/" class="logo">Silvano Corrêa</a>
+        <ul class="nav-menu">
+            <li><a href="cartas-home.html">Minhas Cartas</a></li>
+            <li><a href="sobre.html">Sobre o Autor</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>Bem-vindo à Obra de Silvano Corrêa</h1>
+        <p>Escritor, idealista e cronista do cotidiano brasileiro. Explore suas duas obras disponíveis ao leitor.</p>
     </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Minhas Cartas</h1>
-                <p class="subtitle">expressões de um idealista</p>
-                <p class="period">1958 — 2025</p>
-                <p class="author">Silvano Corrêa</p>
-            </div>
-        </section>
-
-        <section class="intro">
-            <div class="container">
-                <blockquote>
-                    "Sonhar por sonhar é loucura, é fantasia. Sonhar para plasmar em obras grandes e belas esses sonhos, isto é sabedoria, é criação, é realidade."
-                </blockquote>
-                <p class="intro-text">
-                    As centenas de cartas reproduzidas nestes livros, publicadas em jornais e revistas no período de mais de seis décadas, representam a formação e os pensamentos de um idealista. São reflexos de uma vida intensa, variada e sempre pautada pelo estudo, pela curiosidade e exploração de novos caminhos.
-                </p>
-            </div>
-        </section>
-
-        <section class="destaque-section">
-            <div class="container">
-                <div class="destaque-content">
-                    <div class="destaque-imagem">
-                        <span class="destaque-badge">Destaque</span>
-                        <img src="assets/images/carta-jfk.jpg" alt="Carta de John F. Kennedy para Silvano Corrêa">
-                    </div>
-                    <div class="destaque-texto">
-                        <h2>Carta do Presidente John F. Kennedy</h2>
-                        <p class="subtitulo">United States Senate, Washington, D.C.</p>
-                        <p>
-                            Em janeiro de 1961, o então presidente eleito John F. Kennedy enviou esta carta pessoal a Silvano Corrêa, agradecendo a mensagem de congratulações pela sua eleição à presidência dos Estados Unidos.
-                        </p>
-
-                        <div class="carta-jfk-texto">
-                            <div class="carta-toggle">
-                                <button class="toggle-btn active" data-lang="en">English</button>
-                                <button class="toggle-btn" data-lang="pt">Português</button>
-                            </div>
-
-                            <blockquote class="carta-conteudo" id="jfk-en">
-                                <p><em>Dear Mr. Correa:</em></p>
-                                <p>I want to thank you for the very friendly message you sent to me after my election to the presidency.</p>
-                                <p>I am most heartened by the many expressions of good will which I have received from abroad. I am sure that they reflect a broad unity of purpose throughout the world community. I hope that my record during the next four years will sustain your confidence.</p>
-                                <p>With all good wishes, I am</p>
-                                <p><em>Sincerely,</em><br><strong>John F. Kennedy</strong></p>
-                            </blockquote>
-
-                            <blockquote class="carta-conteudo" id="jfk-pt" style="display: none;">
-                                <p><em>Caro Sr. Correa:</em></p>
-                                <p>Quero agradecer-lhe pela mensagem muito amigável que me enviou após minha eleição à presidência.</p>
-                                <p>Estou muito encorajado pelas muitas expressões de boa vontade que recebi do exterior. Tenho certeza de que elas refletem uma ampla unidade de propósito em toda a comunidade mundial. Espero que meu desempenho durante os próximos quatro anos sustente sua confiança.</p>
-                                <p>Com todos os bons votos, sou</p>
-                                <p><em>Sinceramente,</em><br><strong>John F. Kennedy</strong></p>
-                            </blockquote>
-                        </div>
-
-                        <p class="data">13 de janeiro de 1961 — Pittsburgh, Pennsylvania</p>
-                        <a href="cartas.html" class="btn btn-secondary">Ver Todas as Cartas</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="volumes">
-            <div class="container">
-                <h2>Os Volumes</h2>
-                <div class="volumes-grid">
-                    <article class="volume-card volume1">
-                        <div class="volume-cover">
-                            <img src="assets/images/capa-vol1.png" alt="Capa Volume 1 - Minhas Cartas 1958-2008">
-                        </div>
-                        <div class="volume-info">
-                            <h3>Volume 1</h3>
-                            <p class="volume-period">1958 — 2008</p>
-                            <p class="volume-desc">
-                                O primeiro volume reúne cinquenta anos de cartas publicadas em diversos jornais e revistas, incluindo O Estado de S. Paulo, Time Magazine e Pittsburgh Press. Um testemunho de uma vida dedicada ao pensamento crítico e à participação cidadã.
-                            </p>
-                            <p class="volume-isbn">ISBN: 978-65-01-56953-6</p>
-                            <a href="volume1.html" class="btn btn-primary">Ver Detalhes</a>
-                        </div>
-                    </article>
-
-                    <article class="volume-card volume2">
-                        <div class="volume-cover">
-                            <img src="assets/images/capa-vol2.png" alt="Capa Volume 2 - Minhas Cartas 2009-2025">
-                        </div>
-                        <div class="volume-info">
-                            <h3>Volume 2</h3>
-                            <p class="volume-period">2009 — 2025</p>
-                            <p class="volume-desc">
-                                O segundo volume continua a jornada com mais de 350 cartas selecionadas e publicadas principalmente no Fórum dos Leitores do jornal O Estado de S. Paulo. Uma continuação do compromisso com o debate público e a reflexão sobre os rumos do Brasil.
-                            </p>
-                            <p class="volume-isbn">ISBN: 978-65-01-56952-9</p>
-                            <a href="volume2.html" class="btn btn-secondary">Ver Detalhes</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-preview">
-            <div class="container">
-                <div class="about-preview-grid">
-                    <div class="about-preview-photo">
-                        <img src="assets/images/silvano-correa.jpg" alt="Silvano Corrêa">
-                    </div>
-                    <div class="about-content">
-                        <h2>Sobre o Autor</h2>
-                        <p>
-                            Silvano Corrêa nasceu em São Paulo em fevereiro de 1939. Formado em Economia e Matemática pela Duquesne University (Pittsburgh, EUA) em 1962, viveu e estudou nos Estados Unidos por dez anos, desenvolvendo uma visão crítica de brasileiro sobre duas culturas.
-                        </p>
-                        <p>
-                            Com uma carreira em multinacionais e empreendedorismo, fundou a Micro-Total Sistemas em 1980. Faixa preta em Aikidô e estudioso do Espiritismo Kardecista, dedica sua vida ao estudo, à reflexão e à participação ativa na sociedade através de suas cartas.
-                        </p>
-                        <a href="sobre.html" class="btn btn-outline">Conheça a História Completa</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="timeline-preview">
-            <div class="container">
-                <h2>Uma Vida em Cartas</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="year">1958</span>
-                        <p>Primeiras cartas publicadas durante os estudos nos EUA</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">1960s</span>
-                        <p>Cartas na Time Magazine e Pittsburgh Press</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">1980s</span>
-                        <p>Início das publicações regulares no O Estado de S. Paulo</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">1990s</span>
-                        <p>Consolidação como colaborador do Fórum dos Leitores</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">2000s</span>
-                        <p>Continuidade das reflexões sobre Brasil e sociedade</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="year">2025</span>
-                        <p>Publicação dos dois volumes compilados</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h4>Minhas Cartas</h4>
-                    <p>expressões de um idealista</p>
-                    <p class="copyright">&copy; 2025 Silvano Corrêa. Todos os direitos reservados.</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p>scorrea@uol.com</p>
-                </div>
-            </div>
+    <main class="cards-section">
+        <div class="cards-grid">
+            <article class="card">
+                <div class="card-icon">&#x2709;&#xFE0F;</div>
+                <h2>Minhas Cartas</h2>
+                <p class="card-subtitle">Coletânea de Cartas ao Jornal</p>
+                <p>Ao longo de décadas, Silvano Corrêa expressou seu pensamento no maior jornal do Brasil, <em>O Estado de São Paulo</em>. Esta coletânea reúne cartas publicadas entre 1958 e 2025 — um painel vivo da história e do humanismo brasileiro.</p>
+                <a href="cartas-home.html" class="btn btn-primary">Ler as Cartas</a>
+            </article>
+            <article class="card">
+                <div class="card-icon">&#x1F4D6;</div>
+                <h2>As Sete Vidas de Gabo</h2>
+                <p class="card-subtitle">Romance — disponível no Kindle</p>
+                <p>Uma história envolvente sobre reencontros, memória e as múltiplas vidas que carregamos dentro de nós. O romance de estreia de Silvano Corrêa chega ao leitor digital pela plataforma Amazon Kindle.</p>
+                <a href="https://www.amazon.com.br/s?k=As+Sete+Vidas+de+Gabo+Silvano+Correa" target="_blank" rel="noopener" class="btn btn-secondary">Ver no Kindle</a>
+            </article>
         </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; Silvano Corrêa &mdash; Todos os direitos reservados. &nbsp;|&nbsp; <a href="contato.html">Contato</a></p>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>
