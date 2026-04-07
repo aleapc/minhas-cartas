@@ -15,23 +15,33 @@
             background: linear-gradient(160deg, #1a2744 0%, #2a3f6f 100%);
             color: #fff;
             text-align: center;
-            padding: clamp(3rem,8vw,5rem) 2rem clamp(2.5rem,6vw,4rem);
+            padding: clamp(3.5rem,9vw,6rem) 2rem clamp(3rem,7vw,5rem);
         }
         .portal-hero h1 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-weight: 700;
             color: #fff !important;
-            margin-bottom: .6rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: .03em;
+        }
+        .portal-hero .hero-divider {
+            width: 48px;
+            height: 2px;
+            background: #ff9900;
+            margin: 0 auto 1.4rem;
+            border: none;
+            display: block;
         }
         .portal-hero .tagline {
-            font-size: clamp(.95rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
             font-weight: 300;
-            max-width: 600px;
+            max-width: 520px;
             margin: 0 auto;
-            opacity: .88;
-            line-height: 1.65;
+            opacity: .85;
+            line-height: 2;
             color: #fff;
+            letter-spacing: .01em;
         }
         .cards-section {
             padding: 4rem 2rem 5rem;
@@ -193,6 +203,7 @@
     <section class="portal-hero">
         <div class="container">
             <h1>Bem-vindo às Obras de Silvano Correa</h1>
+            <hr class="hero-divider">
             <p class="tagline">Escritor, idealista e cronista do cotidiano brasileiro.<br>Explore suas duas obras disponíveis ao leitor.</p>
         </div>
     </section>
