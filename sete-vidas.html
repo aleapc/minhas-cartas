@@ -124,6 +124,133 @@
         }
         .sv-btn-outline:hover { background: #1a2744; color: #fff; }
         .site-footer { background: #1a2744; color: rgba(255,255,255,.6); text-align: center; padding: 1.5rem; font-size: .85rem; }
+
+        /* ===== Mobile-only styles ===== */
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+
+            /* Hamburger button */
+            .nav-toggle {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px 5px;
+                z-index: 1001;
+            }
+            .nav-toggle span {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background: #2D2D2D;
+                transition: transform .3s ease, opacity .3s ease;
+                transform-origin: center;
+            }
+            .nav-toggle.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            .nav-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .nav-toggle.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            /* Mobile nav dropdown */
+            .nav-menu {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform .3s ease, opacity .3s ease, visibility .3s ease;
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-menu a {
+                font-size: 1.05rem;
+                padding: .6rem 0;
+                display: block;
+            }
+
+            /* Hero adjustments */
+            .book-hero {
+                padding: calc(73px + 1rem) 1.2rem 2.5rem;
+            }
+            .book-hero h1 {
+                font-size: clamp(1.8rem, 6vw, 3rem);
+            }
+            .book-hero .subtitle {
+                font-size: 1rem;
+            }
+
+            /* Prefacio adjustments */
+            .prefacio-section {
+                margin: 2.5rem auto;
+                padding: 0 1.2rem;
+            }
+            .prefacio-section h2 {
+                font-size: 1.6rem;
+            }
+            .prefacio-section p {
+                text-align: left;
+                font-size: 1rem;
+                line-height: 1.75;
+                margin-bottom: 1.2rem;
+            }
+            .prefacio-section .first-letter::first-letter {
+                font-size: 2.5rem;
+            }
+
+            /* Kindle CTA */
+            .kindle-cta {
+                padding: 2.5rem 1.2rem;
+                margin-top: 2rem;
+            }
+            .kindle-cta h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Touch-friendly buttons */
+            .sv-btn-primary,
+            .sv-btn-outline {
+                padding: .85rem 2rem;
+                font-size: 1rem;
+            }
+            .book-nav-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: .6rem;
+            }
+            .book-nav-btns .sv-btn-primary,
+            .book-nav-btns .sv-btn-outline {
+                width: 80%;
+                max-width: 280px;
+                text-align: center;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-hero {
+                padding: calc(73px + .5rem) 1rem 2rem;
+            }
+            .prefacio-section {
+                padding: 0 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,13 +259,16 @@
         <div class="nav-container">
             <a href="index.html" class="logo">Silvano Correa</a>
             <nav>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="cartas-home.html">Minhas Cartas</a></li>
                     <li><a href="sete-vidas.html" class="active">Sete Vidas</a></li>
                     <li><a href="sobre.html">Sobre o Autor</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
@@ -202,9 +332,29 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Silvano Correa. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Silvano Correa. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+    (function() {
+        var toggle = document.getElementById('navToggle');
+        var menu = document.getElementById('navMenu');
+        if (!toggle || !menu) return;
+        toggle.addEventListener('click', function() {
+            var isOpen = menu.classList.toggle('active');
+            toggle.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+        menu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+                toggle.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+    </script>
 
 </body>
 </html>
